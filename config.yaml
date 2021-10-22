@@ -1,5 +1,5 @@
-baseurl: https://example.com
-languageCode: en-us
+baseurl: https://hh02.github.io/
+languageCode: zh-cn #en-us
 theme: hugo-theme-stack
 paginate: 5
 title: 小象不小
