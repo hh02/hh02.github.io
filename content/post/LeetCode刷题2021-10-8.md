@@ -27,7 +27,6 @@ ret * 10 + digit <= INT_MAX
 
 $$
 ret <= \lfloor \frac{intmax-digit}{10} \rfloor
-
 $$
 
 ret * 10 + dight <= INT_MAX / 10 * 10 + INT_MAX % 10
@@ -70,8 +69,6 @@ public:
 ```
 
 ### 11. 盛最多水的容器
-
-
 
 双指针法，减小了搜索空间。每次排除不可能是最优解的。
 
