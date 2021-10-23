@@ -1,7 +1,7 @@
 ---
 title: "LeetCode 206. Reverse Linked List"
 date: 2021-10-23T23:21:59+08:00
-draft: true
+draft: false
 ---
 
 ## 题目
