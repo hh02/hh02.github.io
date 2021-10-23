@@ -12,7 +12,7 @@ Note that it is the kth smallest element in the sorted order, not the kth distin
 
 ## 思路
 
-二分查找
+二分查找。
 
 ## 代码
 
@@ -49,5 +49,3 @@ public:
     }
 };
 ```
-
-
