@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小象不小</title><link>https://hh02.github.io/</link><description>Recent content on 小象不小</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 22 Oct 2021 23:03:34 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LeetCode 378. Kth Smallest Element in a Sorted Matrix</title><link>https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/</link><pubDate>Fri, 22 Oct 2021 23:03:34 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小象不小</title><link>https://hh02.github.io/</link><description>Recent content on 小象不小</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 23 Oct 2021 23:21:59 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LeetCode 206. Reverse Linked List</title><link>https://hh02.github.io/p/leetcode-206.-reverse-linked-list/</link><pubDate>Sat, 23 Oct 2021 23:21:59 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-206.-reverse-linked-list/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>Given the head of a singly linked list, reverse the list, and return the reversed list.&lt;/p>
+&lt;p>Example 1:&lt;/p>
+&lt;p>&lt;figure
+>
+&lt;a href="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" >
+&lt;img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg"
+loading="lazy"
+alt="eg1">
+&lt;/a>
+&lt;figcaption>eg1&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="思路">思路&lt;/h2>
+&lt;p>有迭代和递归两种写法。&lt;/p>
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;h3 id="迭代">迭代&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">reverseList&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">p1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">p2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">p3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">while&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">p3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">p2&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">p1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">p2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">p1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="递归">递归&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">reverseList&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ListNode&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="n">newHead&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">reverseList&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">head&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">head&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="n">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">nullptr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">newHead&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>LeetCode 378. Kth Smallest Element in a Sorted Matrix</title><link>https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/</link><pubDate>Fri, 22 Oct 2021 23:03:34 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix.&lt;/p>
 &lt;p>Note that it is the kth smallest element in the sorted order, not the kth distinct element.&lt;/p>
 &lt;h2 id="思路">思路&lt;/h2>
