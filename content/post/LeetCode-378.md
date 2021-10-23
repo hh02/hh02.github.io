@@ -1,7 +1,7 @@
 ---
 title: "LeetCode 378. Kth Smallest Element in a Sorted Matrix"
 date: 2021-10-22T23:03:34+08:00
-draft: true
+draft: false
 ---
 
 ## 题目
