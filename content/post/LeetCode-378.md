@@ -12,7 +12,7 @@ Note that it is the kth smallest element in the sorted order, not the kth distin
 
 ## 思路
 
-二分查找。
+二分查找。查找比 mid 小的有多少个。因为矩阵是有序的，所以可以很快计算出来比 mid 小的有多少。所以速度很快。
 
 ## 代码
 
