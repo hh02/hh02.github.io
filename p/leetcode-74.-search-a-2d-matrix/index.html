@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序"><title>LeetCode 378. Kth Smallest Element in a Sorted Matrix</title>
-<link rel=canonical href=https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/>
-<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 378. Kth Smallest Element in a Sorted Matrix">
-<meta property="og:description" content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序">
-<meta property="og:url" content="https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/">
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row. Example 1: 20211025170139 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3 Output: true 思路 思路一：先对第"><title>LeetCode 74. Search a 2D Matrix</title>
+<link rel=canonical href=https://hh02.github.io/p/leetcode-74.-search-a-2d-matrix/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 74. Search a 2D Matrix">
+<meta property="og:description" content="题目 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row. Example 1: 20211025170139 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3 Output: true 思路 思路一：先对第">
+<meta property="og:url" content="https://hh02.github.io/p/leetcode-74.-search-a-2d-matrix/">
 <meta property="og:site_name" content="小象不小">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-22T23:03:34+08:00"><meta property="article:modified_time" content="2021-10-22T23:03:34+08:00">
-<meta name=twitter:title content="LeetCode 378. Kth Smallest Element in a Sorted Matrix">
-<meta name=twitter:description content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-25T17:00:43+08:00"><meta property="article:modified_time" content="2021-10-25T17:00:43+08:00">
+<meta name=twitter:title content="LeetCode 74. Search a 2D Matrix">
+<meta name=twitter:description content="题目 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row. Example 1: 20211025170139 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3 Output: true 思路 思路一：先对第">
 </head>
 <body class="article-page has-toc">
 <script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
@@ -24,11 +24,11 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <h2 class=article-title>
-<a href=/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/>LeetCode 378. Kth Smallest Element in a Sorted Matrix</a>
+<a href=/p/leetcode-74.-search-a-2d-matrix/>LeetCode 74. Search a 2D Matrix</a>
 </h2>
 <footer class=article-time>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Oct 22, 2021</time>
+<time class=article-time--published>Oct 25, 2021</time>
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
@@ -40,40 +40,40 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=题目>题目</h2>
-<p>Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix.</p>
-<p>Note that it is the kth smallest element in the sorted order, not the kth distinct element.</p>
-<h2 id=思路>思路</h2>
-<p>二分查找。查找比 mid 小的有多少个。因为矩阵是有序的，所以可以很快计算出来比 mid 小的有多少。所以速度很快。</p>
+<p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:</p>
+<p>Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.</p>
+<p>Example 1:</p>
+<p><figure>
+<a href=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211025170139.png>
+<img src=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211025170139.png loading=lazy alt=20211025170139>
+</a>
+<figcaption>20211025170139</figcaption>
+</figure></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+Output: true
+</code></pre></div><h2 id=思路>思路</h2>
+<p>思路一：先对第一列进行二分查找，再对行进行二分查找；</p>
+<p>思路二：将整个矩阵看作一个长为 m * n 的单调上升数组。</p>
 <h2 id=代码>代码</h2>
+<p>用的是思路二：</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
-    <span class=kt>bool</span> <span class=n>check</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&gt;&amp;</span> <span class=n>matrix</span><span class=p>,</span> <span class=kt>int</span> <span class=n>mid</span><span class=p>,</span> <span class=kt>int</span> <span class=n>k</span><span class=p>,</span> <span class=kt>int</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
-        <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
-        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-        <span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-        <span class=k>while</span> <span class=p>(</span><span class=n>i</span> <span class=o>&gt;=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
-            <span class=k>if</span> <span class=p>(</span><span class=n>matrix</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>mid</span><span class=p>)</span> <span class=p>{</span>
-                <span class=n>num</span> <span class=o>+=</span> <span class=n>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
-                <span class=n>j</span><span class=o>++</span><span class=p>;</span>
+    <span class=kt>bool</span> <span class=n>searchMatrix</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&gt;&amp;</span> <span class=n>matrix</span><span class=p>,</span> <span class=kt>int</span> <span class=n>target</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kt>int</span> <span class=n>m</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>.</span><span class=n>size</span><span class=p>(),</span> <span class=n>n</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=n>size</span><span class=p>();</span>
+        <span class=kt>int</span> <span class=n>low</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>high</span> <span class=o>=</span> <span class=n>m</span> <span class=o>*</span> <span class=n>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+        <span class=k>while</span> <span class=p>(</span><span class=n>low</span> <span class=o>&lt;=</span> <span class=n>high</span><span class=p>)</span> <span class=p>{</span>
+            <span class=kt>int</span> <span class=n>mid</span> <span class=o>=</span> <span class=p>(</span><span class=n>low</span> <span class=o>+</span> <span class=n>high</span><span class=p>)</span> <span class=o>&gt;&gt;</span> <span class=mi>1</span><span class=p>;</span>
+            <span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=n>mid</span> <span class=o>/</span> <span class=n>n</span><span class=p>][</span><span class=n>mid</span> <span class=o>%</span> <span class=n>n</span><span class=p>];</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>x</span> <span class=o>&lt;</span> <span class=n>target</span><span class=p>)</span> <span class=p>{</span>
+                <span class=n>low</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+            <span class=p>}</span> <span class=k>else</span> <span class=nf>if</span> <span class=p>(</span><span class=n>x</span> <span class=o>&gt;</span> <span class=n>target</span><span class=p>)</span> <span class=p>{</span>
+                <span class=n>high</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
             <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-                <span class=n>i</span><span class=o>--</span><span class=p>;</span>
+                <span class=k>return</span> <span class=nb>true</span><span class=p>;</span>
             <span class=p>}</span>
         <span class=p>}</span>
-        <span class=k>return</span> <span class=n>num</span> <span class=o>&gt;=</span> <span class=n>k</span><span class=p>;</span>
-    <span class=p>}</span>
-    <span class=kt>int</span> <span class=nf>kthSmallest</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&gt;&amp;</span> <span class=n>matrix</span><span class=p>,</span> <span class=kt>int</span> <span class=n>k</span><span class=p>)</span> <span class=p>{</span>
-        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
-        <span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=mi>0</span><span class=p>][</span><span class=mi>0</span><span class=p>];</span>
-        <span class=kt>int</span> <span class=n>r</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>][</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>];</span>
-        <span class=k>while</span> <span class=p>(</span><span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=p>)</span> <span class=p>{</span>
-            <span class=kt>int</span> <span class=n>mid</span> <span class=o>=</span> <span class=n>l</span> <span class=o>+</span> <span class=p>(</span><span class=n>r</span> <span class=o>-</span> <span class=n>l</span><span class=p>)</span> <span class=o>/</span> <span class=mi>2</span><span class=p>;</span>
-            <span class=k>if</span> <span class=p>(</span><span class=n>check</span><span class=p>(</span><span class=n>matrix</span><span class=p>,</span> <span class=n>mid</span><span class=p>,</span> <span class=n>k</span><span class=p>,</span> <span class=n>n</span><span class=p>))</span> <span class=p>{</span>
-                <span class=n>r</span> <span class=o>=</span> <span class=n>mid</span><span class=p>;</span>
-            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-                <span class=n>l</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
-            <span class=p>}</span>
-        <span class=p>}</span>
-        <span class=k>return</span> <span class=n>l</span><span class=p>;</span>
+        <span class=k>return</span> <span class=nb>false</span><span class=p>;</span>
     <span class=p>}</span>
 <span class=p>};</span>
 </code></pre></div>

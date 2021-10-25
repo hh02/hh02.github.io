@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序"><title>LeetCode 378. Kth Smallest Element in a Sorted Matrix</title>
-<link rel=canonical href=https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/>
-<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 378. Kth Smallest Element in a Sorted Matrix">
-<meta property="og:description" content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序">
-<meta property="og:url" content="https://hh02.github.io/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/">
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], &amp;hellip;, nums[n-1], nums[0], nums[1], &amp;hellip;, nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after"><title>LeetCode 33. Search in Rotated Sorted Array</title>
+<link rel=canonical href=https://hh02.github.io/p/leetcode-33.-search-in-rotated-sorted-array/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 33. Search in Rotated Sorted Array">
+<meta property="og:description" content="题目 There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], &amp;hellip;, nums[n-1], nums[0], nums[1], &amp;hellip;, nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after">
+<meta property="og:url" content="https://hh02.github.io/p/leetcode-33.-search-in-rotated-sorted-array/">
 <meta property="og:site_name" content="小象不小">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-22T23:03:34+08:00"><meta property="article:modified_time" content="2021-10-22T23:03:34+08:00">
-<meta name=twitter:title content="LeetCode 378. Kth Smallest Element in a Sorted Matrix">
-<meta name=twitter:description content="题目 Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element. 思路 二分查找。查找比 mid 小的有多少个。因为矩阵是有序">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-25T16:47:56+08:00"><meta property="article:modified_time" content="2021-10-25T16:47:56+08:00">
+<meta name=twitter:title content="LeetCode 33. Search in Rotated Sorted Array">
+<meta name=twitter:description content="题目 There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], &amp;hellip;, nums[n-1], nums[0], nums[1], &amp;hellip;, nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after">
 </head>
 <body class="article-page has-toc">
 <script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
@@ -24,11 +24,11 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <h2 class=article-title>
-<a href=/p/leetcode-378.-kth-smallest-element-in-a-sorted-matrix/>LeetCode 378. Kth Smallest Element in a Sorted Matrix</a>
+<a href=/p/leetcode-33.-search-in-rotated-sorted-array/>LeetCode 33. Search in Rotated Sorted Array</a>
 </h2>
 <footer class=article-time>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Oct 22, 2021</time>
+<time class=article-time--published>Oct 25, 2021</time>
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
@@ -40,40 +40,49 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=题目>题目</h2>
-<p>Given an n x n matrix where each of the rows and columns are sorted in ascending order, return the kth smallest element in the matrix.</p>
-<p>Note that it is the kth smallest element in the sorted order, not the kth distinct element.</p>
-<h2 id=思路>思路</h2>
-<p>二分查找。查找比 mid 小的有多少个。因为矩阵是有序的，所以可以很快计算出来比 mid 小的有多少。所以速度很快。</p>
+<p>There is an integer array nums sorted in ascending order (with distinct values).</p>
+<p>Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &lt;= k &lt; nums.length) such that the resulting array is [nums[k], nums[k+1], &mldr;, nums[n-1], nums[0], nums[1], &mldr;, nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].</p>
+<p>Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.</p>
+<p>You must write an algorithm with O(log n) runtime complexity.</p>
+<p>Example 1:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+</code></pre></div><h2 id=思路>思路</h2>
+<p>虽然不是完全单调，但是还是可以用二分。</p>
+<p>设在[l, r] 区间上搜索, mid = (l + r) / 2, 由于整个数组上只有一个跳跃点，且跳跃点右侧的值都是小于跳跃点左侧的值。在这个跳跃点左侧的区间，右侧的区间都是单调的，mid 要么在跳跃点的左侧要么在跳跃点的右侧。</p>
+<ol>
+<li>若 nums[mid] == target，则 mid 就是答案。</li>
+<li>若 nums[mid] > nums[0], 那么 mid 必然在左单调区间，因为右单调区间的值都是小于左单调区间的值的。1. 如果 nums[0] &lt;= target &lt;= nums[mid] 说明 target 不在 [mid + 1, r] 上， 排除一半的搜索范围；2. 否则，target 不在 [l, mid] 上同样排除一半的搜索空间。</li>
+<li>若 nums[mid] &lt; nums[0], 与2同理。</li>
+</ol>
 <h2 id=代码>代码</h2>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
-    <span class=kt>bool</span> <span class=n>check</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&gt;&amp;</span> <span class=n>matrix</span><span class=p>,</span> <span class=kt>int</span> <span class=n>mid</span><span class=p>,</span> <span class=kt>int</span> <span class=n>k</span><span class=p>,</span> <span class=kt>int</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
-        <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
-        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-        <span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-        <span class=k>while</span> <span class=p>(</span><span class=n>i</span> <span class=o>&gt;=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
-            <span class=k>if</span> <span class=p>(</span><span class=n>matrix</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>mid</span><span class=p>)</span> <span class=p>{</span>
-                <span class=n>num</span> <span class=o>+=</span> <span class=n>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
-                <span class=n>j</span><span class=o>++</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>search</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&amp;</span> <span class=n>nums</span><span class=p>,</span> <span class=kt>int</span> <span class=n>target</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
+        <span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=n>mid</span><span class=p>;</span>
+        <span class=k>while</span> <span class=p>(</span><span class=n>l</span> <span class=o>&lt;=</span> <span class=n>r</span><span class=p>)</span> <span class=p>{</span>
+            <span class=n>mid</span> <span class=o>=</span> <span class=p>(</span><span class=n>l</span> <span class=o>+</span> <span class=n>r</span><span class=p>)</span> <span class=o>&gt;&gt;</span> <span class=mi>1</span><span class=p>;</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>[</span><span class=n>mid</span><span class=p>]</span> <span class=o>==</span> <span class=n>target</span><span class=p>)</span> <span class=p>{</span>
+                <span class=k>return</span> <span class=n>mid</span><span class=p>;</span>
+            <span class=p>}</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>nums</span><span class=p>[</span><span class=n>mid</span><span class=p>])</span> <span class=p>{</span>
+                <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>target</span> <span class=o>&amp;&amp;</span> <span class=n>target</span> <span class=o>&lt;=</span> <span class=n>nums</span><span class=p>[</span><span class=n>mid</span><span class=p>])</span> <span class=p>{</span>
+                    <span class=n>r</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+                <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                    <span class=n>l</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+                <span class=p>}</span>
             <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-                <span class=n>i</span><span class=o>--</span><span class=p>;</span>
+                <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>[</span><span class=n>mid</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>target</span> <span class=o>&amp;&amp;</span> <span class=n>target</span> <span class=o>&lt;=</span> <span class=n>nums</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span> <span class=p>{</span>
+                    <span class=n>l</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+                <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                    <span class=n>r</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+                <span class=p>}</span>
             <span class=p>}</span>
         <span class=p>}</span>
-        <span class=k>return</span> <span class=n>num</span> <span class=o>&gt;=</span> <span class=n>k</span><span class=p>;</span>
-    <span class=p>}</span>
-    <span class=kt>int</span> <span class=nf>kthSmallest</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&gt;&amp;</span> <span class=n>matrix</span><span class=p>,</span> <span class=kt>int</span> <span class=n>k</span><span class=p>)</span> <span class=p>{</span>
-        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
-        <span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=mi>0</span><span class=p>][</span><span class=mi>0</span><span class=p>];</span>
-        <span class=kt>int</span> <span class=n>r</span> <span class=o>=</span> <span class=n>matrix</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>][</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>];</span>
-        <span class=k>while</span> <span class=p>(</span><span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=p>)</span> <span class=p>{</span>
-            <span class=kt>int</span> <span class=n>mid</span> <span class=o>=</span> <span class=n>l</span> <span class=o>+</span> <span class=p>(</span><span class=n>r</span> <span class=o>-</span> <span class=n>l</span><span class=p>)</span> <span class=o>/</span> <span class=mi>2</span><span class=p>;</span>
-            <span class=k>if</span> <span class=p>(</span><span class=n>check</span><span class=p>(</span><span class=n>matrix</span><span class=p>,</span> <span class=n>mid</span><span class=p>,</span> <span class=n>k</span><span class=p>,</span> <span class=n>n</span><span class=p>))</span> <span class=p>{</span>
-                <span class=n>r</span> <span class=o>=</span> <span class=n>mid</span><span class=p>;</span>
-            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-                <span class=n>l</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
-            <span class=p>}</span>
-        <span class=p>}</span>
-        <span class=k>return</span> <span class=n>l</span><span class=p>;</span>
+        <span class=k>return</span> <span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+
+
     <span class=p>}</span>
 <span class=p>};</span>
 </code></pre></div>

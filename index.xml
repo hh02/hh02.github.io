@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小象不小</title><link>https://hh02.github.io/</link><description>Recent content on 小象不小</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 25 Oct 2021 15:22:51 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LeetCode Weekly Contest 264</title><link>https://hh02.github.io/p/leetcode-weekly-contest-264/</link><pubDate>Mon, 25 Oct 2021 15:22:51 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-weekly-contest-264/</guid><description>&lt;h2 id="5907-next-greater-numerically-balanced-number">5907. Next Greater Numerically Balanced Number&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小象不小</title><link>https://hh02.github.io/</link><description>Recent content on 小象不小</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 25 Oct 2021 17:14:15 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LeetCode 75. Sort Colors</title><link>https://hh02.github.io/p/leetcode-75.-sort-colors/</link><pubDate>Mon, 25 Oct 2021 17:14:15 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-75.-sort-colors/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.&lt;/p>
+&lt;p>We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.&lt;/p>
+&lt;p>You must solve this problem without using the library&amp;rsquo;s sort function.&lt;/p>
+&lt;p>Example 1:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="思路">思路&lt;/h2>
+&lt;p>朴素的方法：第一遍遍历把所有0移动到最左端，第二遍遍历把所有1移动到0后面。&lt;/p>
+&lt;p>改进一（双指针）：可以只遍历一遍，用两个指针p0, p1分别代表0的位置和1的位置，从左往右遍历遇到1将1交换到p1的位置，然后 p1++, 遇到0则将0交换到p0的位置，由于p0的位置上可能是1，如果是1还要再将1移动到p1的位置；然后 p0++, p1++；&lt;/p>
+&lt;p>改进二（双指针）：遍历一遍，用p0, p2分别代表0和2的位置，从左往右遍历，遇到0则将0交换到p0的位置，然后p0向后移动一位，遇到2则将2交换到p2的位置，然后p2再向前移动一位，但是原来p2的位置可能是2，如果是2还要再将2交换到p2的位置，直到不是2为止。&lt;/p>
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;p>改进一&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="kt">void&lt;/span> &lt;span class="n">sortColors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&amp;amp;&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">p0&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">p1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">swap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">p1&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;span class="n">p1&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="nf">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">swap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">p0&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">p0&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">p1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">swap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">p1&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="o">++&lt;/span>&lt;span class="n">p0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="o">++&lt;/span>&lt;span class="n">p1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>改进二&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="kt">void&lt;/span> &lt;span class="n">sortColors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&amp;amp;&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">p0&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">p2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">p2&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">swap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">p2&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">swap&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">p0&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">]);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>LeetCode 74. Search a 2D Matrix</title><link>https://hh02.github.io/p/leetcode-74.-search-a-2d-matrix/</link><pubDate>Mon, 25 Oct 2021 17:00:43 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-74.-search-a-2d-matrix/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:&lt;/p>
+&lt;p>Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.&lt;/p>
+&lt;p>Example 1:&lt;/p>
+&lt;p>&lt;figure
+>
+&lt;a href="https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211025170139.png" >
+&lt;img src="https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211025170139.png"
+loading="lazy"
+alt="20211025170139">
+&lt;/a>
+&lt;figcaption>20211025170139&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+Output: true
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="思路">思路&lt;/h2>
+&lt;p>思路一：先对第一列进行二分查找，再对行进行二分查找；&lt;/p>
+&lt;p>思路二：将整个矩阵看作一个长为 m * n 的单调上升数组。&lt;/p>
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;p>用的是思路二：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="kt">bool&lt;/span> &lt;span class="n">searchMatrix&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&amp;amp;&lt;/span> &lt;span class="n">matrix&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">target&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">m&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">matrix&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">matrix&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">low&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">m&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">low&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">low&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">matrix&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">mid&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">mid&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">target&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">low&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="nf">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">target&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">high&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nb">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nb">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>LeetCode 33. Search in Rotated Sorted Array</title><link>https://hh02.github.io/p/leetcode-33.-search-in-rotated-sorted-array/</link><pubDate>Mon, 25 Oct 2021 16:47:56 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-33.-search-in-rotated-sorted-array/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>There is an integer array nums sorted in ascending order (with distinct values).&lt;/p>
+&lt;p>Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], &amp;hellip;, nums[n-1], nums[0], nums[1], &amp;hellip;, nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].&lt;/p>
+&lt;p>Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.&lt;/p>
+&lt;p>You must write an algorithm with O(log n) runtime complexity.&lt;/p>
+&lt;p>Example 1:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="思路">思路&lt;/h2>
+&lt;p>虽然不是完全单调，但是还是可以用二分。&lt;/p>
+&lt;p>设在[l, r] 区间上搜索, mid = (l + r) / 2, 由于整个数组上只有一个跳跃点，且跳跃点右侧的值都是小于跳跃点左侧的值。在这个跳跃点左侧的区间，右侧的区间都是单调的，mid 要么在跳跃点的左侧要么在跳跃点的右侧。&lt;/p>
+&lt;ol>
+&lt;li>若 nums[mid] == target，则 mid 就是答案。&lt;/li>
+&lt;li>若 nums[mid] &amp;gt; nums[0], 那么 mid 必然在左单调区间，因为右单调区间的值都是小于左单调区间的值的。1. 如果 nums[0] &amp;lt;= target &amp;lt;= nums[mid] 说明 target 不在 [mid + 1, r] 上， 排除一半的搜索范围；2. 否则，target 不在 [l, mid] 上同样排除一半的搜索空间。&lt;/li>
+&lt;li>若 nums[mid] &amp;lt; nums[0], 与2同理。&lt;/li>
+&lt;/ol>
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="k">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">search&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vector&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&amp;amp;&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">target&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">size&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">mid&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">l&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">r&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">mid&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">l&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">r&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">mid&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">target&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">mid&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">mid&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">target&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">target&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">mid&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">mid&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">target&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">target&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mid&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>LeetCode Weekly Contest 264</title><link>https://hh02.github.io/p/leetcode-weekly-contest-264/</link><pubDate>Mon, 25 Oct 2021 15:22:51 +0800</pubDate><guid>https://hh02.github.io/p/leetcode-weekly-contest-264/</guid><description>&lt;h2 id="2048-next-greater-numerically-balanced-number">2048. Next Greater Numerically Balanced Number&lt;/h2>
 &lt;h3 id="题目">题目&lt;/h3>
 &lt;p>An integer x is numerically balanced if for every digit d in the number x, there are exactly d occurrences of that digit in x.&lt;/p>
 &lt;p>Given an integer n, return the smallest numerically balanced number strictly greater than n.&lt;/p>
