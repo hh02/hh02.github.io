@@ -4,7 +4,7 @@ date: 2021-10-25T15:22:51+08:00
 draft: false
 ---
 
-## 5907. Next Greater Numerically Balanced Number
+## 2048. Next Greater Numerically Balanced Number
 
 ### 题目
 
