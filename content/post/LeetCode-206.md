@@ -10,7 +10,7 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 
 Example 1:
 
-![eg1](https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg)
+![20211023233452](https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211023233452.png)
 
 ```text
 Input: head = [1,2,3,4,5]
