@@ -32,28 +32,24 @@ KMP算法的模板题，终于会写 KMP啦！！！
 ```cpp
 class Solution {
 public:
-    int minDistance(string word1, string word2) {
-        int n = word1.size();
-        int m = word2.size();
-        int dp[n+6][m+6];
-        dp[0][0] = 0;
-        for (int i = 1; i <= m; i++) {
-            dp[0][i] = i;
+    int strStr(string haystack, string needle) {
+        int m = haystack.size(), n = needle.size();
+        if (!n) return 0;
+        int nxt[n+10];
+        nxt[0] = -1;
+        for (int i = 1, j = -1; i < n; i++) {
+            while (j > -1 && needle[i] != needle[j+1]) j = nxt[j];
+            if (needle[i] == needle[j+1]) j++;
+            nxt[i] = j;
         }
-        for (int i = 1; i <= n; i++) {
-            dp[i][0] = i;
-        }
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
-                if (word1[i-1] == word2[j-1]) {
-                    dp[i][j] = dp[i-1][j-1];
-                } else {
-                    dp[i][j] = min(dp[i][j-1], min(dp[i-1][j-1], dp[i-1][j])) + 1;
-                }
+        for (int i = 0, j = -1; i < m; i++) {
+            while (j > -1 && (j == n-1 || haystack[i] != needle[j+1])) j = nxt[j];
+            if (haystack[i] == needle[j+1]) j++;
+            if (j == n - 1) {
+                return i - n + 1;
             }
         }
-        return dp[n][m];
-
+        return -1;
     }
 };
 ```
