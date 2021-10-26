@@ -2,7 +2,7 @@ baseurl: https://hh02.github.io/
 languageCode: zh-cn #en-us
 theme: hugo-theme-stack
 paginate: 5
-title: 小象不小
+title: Day Day Up
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
