@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {"><title>LeetCode 206. Reverse Linked List</title>
-<link rel=canonical href=https://hh02.github.io/p/leetcode-206.-reverse-linked-list/>
-<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 206. Reverse Linked List">
-<meta property="og:description" content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {">
-<meta property="og:url" content="https://hh02.github.io/p/leetcode-206.-reverse-linked-list/">
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 A valid parentheses string is either empty &amp;ldquo;&amp;rdquo;, &amp;ldquo;(&amp;rdquo; + A + &amp;ldquo;)&amp;rdquo;, or A + B, where A and B are valid parentheses strings, and + represents string concatenation. For example, &amp;ldquo;&amp;rdquo;, &amp;ldquo;()&amp;rdquo;, &amp;ldquo;(())()&amp;rdquo;, and &amp;ldquo;(()(()))&amp;rdquo; are all valid parentheses strings. A valid parentheses string s is primitive if it is nonempty, and there does not exist a way to split it into s = A +"><title>LeetCode 1021. Remove Outermost Parentheses</title>
+<link rel=canonical href=https://hh02.github.io/p/leetcode-1021.-remove-outermost-parentheses/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 1021. Remove Outermost Parentheses">
+<meta property="og:description" content="题目 A valid parentheses string is either empty &amp;ldquo;&amp;rdquo;, &amp;ldquo;(&amp;rdquo; + A + &amp;ldquo;)&amp;rdquo;, or A + B, where A and B are valid parentheses strings, and + represents string concatenation. For example, &amp;ldquo;&amp;rdquo;, &amp;ldquo;()&amp;rdquo;, &amp;ldquo;(())()&amp;rdquo;, and &amp;ldquo;(()(()))&amp;rdquo; are all valid parentheses strings. A valid parentheses string s is primitive if it is nonempty, and there does not exist a way to split it into s = A +">
+<meta property="og:url" content="https://hh02.github.io/p/leetcode-1021.-remove-outermost-parentheses/">
 <meta property="og:site_name" content="Day Day Up">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-23T23:21:59+08:00"><meta property="article:modified_time" content="2021-10-23T23:21:59+08:00">
-<meta name=twitter:title content="LeetCode 206. Reverse Linked List">
-<meta name=twitter:description content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-11-04T12:31:52+08:00"><meta property="article:modified_time" content="2021-11-04T12:31:52+08:00">
+<meta name=twitter:title content="LeetCode 1021. Remove Outermost Parentheses">
+<meta name=twitter:description content="题目 A valid parentheses string is either empty &amp;ldquo;&amp;rdquo;, &amp;ldquo;(&amp;rdquo; + A + &amp;ldquo;)&amp;rdquo;, or A + B, where A and B are valid parentheses strings, and + represents string concatenation. For example, &amp;ldquo;&amp;rdquo;, &amp;ldquo;()&amp;rdquo;, &amp;ldquo;(())()&amp;rdquo;, and &amp;ldquo;(()(()))&amp;rdquo; are all valid parentheses strings. A valid parentheses string s is primitive if it is nonempty, and there does not exist a way to split it into s = A +">
 </head>
 <body class="article-page has-toc">
 <script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
@@ -24,11 +24,11 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <h2 class=article-title>
-<a href=/p/leetcode-206.-reverse-linked-list/>LeetCode 206. Reverse Linked List</a>
+<a href=/p/leetcode-1021.-remove-outermost-parentheses/>LeetCode 1021. Remove Outermost Parentheses</a>
 </h2>
 <footer class=article-time>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Oct 23, 2021</time>
+<time class=article-time--published>Nov 04, 2021</time>
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
@@ -40,49 +40,46 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=题目>题目</h2>
-<p>Given the head of a singly linked list, reverse the list, and return the reversed list.</p>
+<p>A valid parentheses string is either empty &ldquo;&rdquo;, &ldquo;(&rdquo; + A + &ldquo;)&rdquo;, or A + B, where A and B are valid parentheses strings, and + represents string concatenation.</p>
+<p>For example, &ldquo;&rdquo;, &ldquo;()&rdquo;, &ldquo;(())()&rdquo;, and &ldquo;(()(()))&rdquo; are all valid parentheses strings.
+A valid parentheses string s is primitive if it is nonempty, and there does not exist a way to split it into s = A + B, with A and B nonempty valid parentheses strings.</p>
+<p>Given a valid parentheses string s, consider its primitive decomposition: s = P1 + P2 + &mldr; + Pk, where Pi are primitive valid parentheses strings.</p>
+<p>Return s after removing the outermost parentheses of every primitive string in the primitive decomposition of s.</p>
 <p>Example 1:</p>
-<p><figure>
-<a href=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211023233452.png>
-<img src=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211023233452.png loading=lazy alt=20211023233452>
-</a>
-<figcaption>20211023233452</figcaption>
-</figure></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: s = &#34;(()())(())&#34;
+Output: &#34;()()()&#34;
+Explanation: 
+The input string is &#34;(()())(())&#34;, with primitive decomposition &#34;(()())&#34; + &#34;(())&#34;.
+After removing outer parentheses of each part, this is &#34;()()&#34; + &#34;()&#34; = &#34;()()()&#34;.
 </code></pre></div><h2 id=思路>思路</h2>
-<p>有迭代和递归两种写法。</p>
+<p>可以发现最外层的括号在退栈后栈会空，所以记录空栈时括号对的 index，然后删除就可以了。</p>
 <h2 id=代码>代码</h2>
-<h3 id=迭代>迭代</h3>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
-    <span class=n>ListNode</span><span class=o>*</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>ListNode</span><span class=o>*</span> <span class=n>head</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>if</span> <span class=p>(</span><span class=n>head</span> <span class=o>==</span> <span class=k>nullptr</span><span class=p>)</span> <span class=k>return</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p1</span> <span class=o>=</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p2</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p3</span><span class=p>;</span>
-        <span class=k>while</span><span class=p>(</span><span class=n>p2</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>p3</span> <span class=o>=</span> <span class=n>p2</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
-            <span class=n>p2</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>p1</span><span class=p>;</span>
-            <span class=n>p1</span> <span class=o>=</span> <span class=n>p2</span><span class=p>;</span>
-            <span class=n>p2</span> <span class=o>=</span> <span class=n>p3</span><span class=p>;</span>
+    <span class=n>string</span> <span class=n>removeOuterParentheses</span><span class=p>(</span><span class=n>string</span> <span class=n>s</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>s</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
+        <span class=kt>int</span> <span class=n>t1</span> <span class=o>=</span> <span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=n>t2</span> <span class=o>=</span> <span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+        <span class=n>stack</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>stk</span><span class=p>;</span>
+        <span class=kt>bool</span> <span class=n>d</span><span class=p>[</span><span class=n>n</span> <span class=o>+</span> <span class=mi>1</span><span class=p>];</span>
+        <span class=n>memset</span><span class=p>(</span><span class=n>d</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>d</span><span class=p>));</span>
+        <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>s</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>==</span> <span class=sc>&#39;(&#39;</span><span class=p>)</span> <span class=p>{</span>
+                <span class=n>stk</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                <span class=kt>int</span> <span class=n>t</span> <span class=o>=</span> <span class=n>stk</span><span class=p>.</span><span class=n>top</span><span class=p>();</span>
+                <span class=n>stk</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+                <span class=k>if</span> <span class=p>(</span><span class=n>stk</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span> <span class=p>{</span>
+                    <span class=n>d</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>d</span><span class=p>[</span><span class=n>t</span><span class=p>]</span> <span class=o>=</span> <span class=nb>true</span><span class=p>;</span>
+                <span class=p>}</span>
+            <span class=p>}</span>
         <span class=p>}</span>
-        <span class=k>return</span> <span class=n>p1</span><span class=p>;</span>
-        
-
-    <span class=p>}</span>
-<span class=p>};</span>
-</code></pre></div><h3 id=递归>递归</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
-<span class=k>public</span><span class=o>:</span>
-    <span class=n>ListNode</span><span class=o>*</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>ListNode</span><span class=o>*</span> <span class=n>head</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>head</span> <span class=o>||</span> <span class=o>!</span><span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>)</span> <span class=p>{</span>
-            <span class=k>return</span> <span class=n>head</span><span class=p>;</span>
+        <span class=n>string</span> <span class=n>ans</span><span class=p>;</span>
+        <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+            <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>d</span><span class=p>[</span><span class=n>i</span><span class=p>])</span> <span class=p>{</span>
+                <span class=n>ans</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>s</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+            <span class=p>}</span>
         <span class=p>}</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>newHead</span> <span class=o>=</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>);</span>
-        <span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
-        <span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=k>return</span> <span class=n>newHead</span><span class=p>;</span>
+        <span class=k>return</span> <span class=n>ans</span><span class=p>;</span>
     <span class=p>}</span>
 <span class=p>};</span>
 </code></pre></div>
@@ -161,12 +158,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <ol>
 <li><a href=#题目>题目</a></li>
 <li><a href=#思路>思路</a></li>
-<li><a href=#代码>代码</a>
-<ol>
-<li><a href=#迭代>迭代</a></li>
-<li><a href=#递归>递归</a></li>
-</ol>
-</li>
+<li><a href=#代码>代码</a></li>
 </ol>
 </nav>
 </div>

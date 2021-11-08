@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {"><title>LeetCode 206. Reverse Linked List</title>
-<link rel=canonical href=https://hh02.github.io/p/leetcode-206.-reverse-linked-list/>
-<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 206. Reverse Linked List">
-<meta property="og:description" content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {">
-<meta property="og:url" content="https://hh02.github.io/p/leetcode-206.-reverse-linked-list/">
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 A peak element is an element that is strictly greater than its neighbors. Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks. You may imagine that nums[-1] = nums[n] = -∞. You must write an algorithm that runs in O(log n) time. Example 1: Input: nums = [1,2,3,1]"><title>LeetCode 162. Find Peak Element</title>
+<link rel=canonical href=https://hh02.github.io/p/leetcode-162.-find-peak-element/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="LeetCode 162. Find Peak Element">
+<meta property="og:description" content="题目 A peak element is an element that is strictly greater than its neighbors. Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks. You may imagine that nums[-1] = nums[n] = -∞. You must write an algorithm that runs in O(log n) time. Example 1: Input: nums = [1,2,3,1]">
+<meta property="og:url" content="https://hh02.github.io/p/leetcode-162.-find-peak-element/">
 <meta property="og:site_name" content="Day Day Up">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-10-23T23:21:59+08:00"><meta property="article:modified_time" content="2021-10-23T23:21:59+08:00">
-<meta name=twitter:title content="LeetCode 206. Reverse Linked List">
-<meta name=twitter:description content="题目 Given the head of a singly linked list, reverse the list, and return the reversed list. Example 1: 20211023233452 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] 思路 有迭代和递归两种写法。 代码 迭代 class Solution { public: ListNode* reverseList(ListNode* head) { if (head == nullptr) return nullptr; ListNode* p1 = nullptr; ListNode* p2 = head; ListNode* p3; while(p2) {">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2021-11-06T16:25:03+08:00"><meta property="article:modified_time" content="2021-11-06T16:25:03+08:00">
+<meta name=twitter:title content="LeetCode 162. Find Peak Element">
+<meta name=twitter:description content="题目 A peak element is an element that is strictly greater than its neighbors. Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks. You may imagine that nums[-1] = nums[n] = -∞. You must write an algorithm that runs in O(log n) time. Example 1: Input: nums = [1,2,3,1]">
 </head>
 <body class="article-page has-toc">
 <script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
@@ -24,15 +24,15 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <h2 class=article-title>
-<a href=/p/leetcode-206.-reverse-linked-list/>LeetCode 206. Reverse Linked List</a>
+<a href=/p/leetcode-162.-find-peak-element/>LeetCode 162. Find Peak Element</a>
 </h2>
 <footer class=article-time>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Oct 23, 2021</time>
+<time class=article-time--published>Nov 06, 2021</time>
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-阅读时长: 1 分钟
+阅读时长: 2 分钟
 </time>
 </div>
 </footer>
@@ -40,49 +40,57 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=题目>题目</h2>
-<p>Given the head of a singly linked list, reverse the list, and return the reversed list.</p>
+<p>A peak element is an element that is strictly greater than its neighbors.</p>
+<p>Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.</p>
+<p>You may imagine that nums[-1] = nums[n] = -∞.</p>
+<p>You must write an algorithm that runs in O(log n) time.</p>
 <p>Example 1:</p>
-<p><figure>
-<a href=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211023233452.png>
-<img src=https://cdn.jsdelivr.net/gh/hh02/img@main/img/20211023233452.png loading=lazy alt=20211023233452>
-</a>
-<figcaption>20211023233452</figcaption>
-</figure></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>Input: nums = [1,2,3,1]
+Output: 2
+Explanation: 3 is a peak element and your function should return the index number 2.
 </code></pre></div><h2 id=思路>思路</h2>
-<p>有迭代和递归两种写法。</p>
+<p>我以前一直以为必须单调的数组才能用二分查找，后来遇到 LeetCode 第33题，明白了只要每次能排除掉一半的选项也能用二分查找，再后来就遇到了这题，我才想明白，二分查找是每一确定一半的选项。</p>
+<p>l = 0, r = nums.size() - 1, 对于每个 mid，有三种情况：</p>
+<ol>
+<li>nums[mid-1] &lt; nums[mid] > nums[mid+1]，直接返回答案；</li>
+<li>nums[mid] &lt; nums[mid+1], 说明mid 到 mid + 1 是递增的，那么mid + 1 ~ r，之间肯定有答案，因为：若mid+1 ~ r 是单增的，则 r 就是峰，若不是单增的，则一定有一个峰；</li>
+<li>nums[mid-1] > nums[mid], 与2同理。</li>
+</ol>
+<p>现在来证明若mid+1 ~ r 单增的，则 r 就是峰。</p>
+<p>若 mid+1 ~ r 是单增的, nums[r-1] &lt; nums[r]，我们只要证明 nums[r] > nums[r+1] 就行了。</p>
+<p>我们可以证明无论 r 怎么变化，nums[r] 一定大于 nums[r+1]：</p>
+<ul>
+<li>初始时，r = n-1, nums[r+1] = -∞， 显然 nums[r] > nums[r+1]；</li>
+<li>在中途迭代中 r = mid' - 1 的条件是 num[mid' - 1] > nums[mid']，所以在迭代后 num[r] > nums[r + 1]。</li>
+</ul>
+<p>证毕。</p>
 <h2 id=代码>代码</h2>
-<h3 id=迭代>迭代</h3>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
-    <span class=n>ListNode</span><span class=o>*</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>ListNode</span><span class=o>*</span> <span class=n>head</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>if</span> <span class=p>(</span><span class=n>head</span> <span class=o>==</span> <span class=k>nullptr</span><span class=p>)</span> <span class=k>return</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p1</span> <span class=o>=</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p2</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>p3</span><span class=p>;</span>
-        <span class=k>while</span><span class=p>(</span><span class=n>p2</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>p3</span> <span class=o>=</span> <span class=n>p2</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
-            <span class=n>p2</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>p1</span><span class=p>;</span>
-            <span class=n>p1</span> <span class=o>=</span> <span class=n>p2</span><span class=p>;</span>
-            <span class=n>p2</span> <span class=o>=</span> <span class=n>p3</span><span class=p>;</span>
-        <span class=p>}</span>
-        <span class=k>return</span> <span class=n>p1</span><span class=p>;</span>
-        
+    <span class=kt>int</span> <span class=n>findPeakElement</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&amp;</span> <span class=n>nums</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
 
-    <span class=p>}</span>
-<span class=p>};</span>
-</code></pre></div><h3 id=递归>递归</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
-<span class=k>public</span><span class=o>:</span>
-    <span class=n>ListNode</span><span class=o>*</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>ListNode</span><span class=o>*</span> <span class=n>head</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>head</span> <span class=o>||</span> <span class=o>!</span><span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>)</span> <span class=p>{</span>
-            <span class=k>return</span> <span class=n>head</span><span class=p>;</span>
+        <span class=k>auto</span> <span class=n>get</span> <span class=o>=</span> <span class=p>[</span><span class=o>&amp;</span><span class=p>](</span><span class=kt>int</span> <span class=n>i</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pair</span><span class=o>&lt;</span><span class=kt>int</span><span class=p>,</span> <span class=kt>int</span><span class=o>&gt;</span> <span class=p>{</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=o>-</span><span class=mi>1</span> <span class=o>||</span> <span class=n>i</span> <span class=o>==</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
+                <span class=k>return</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>};</span>
+            <span class=p>}</span>
+            <span class=k>return</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=n>nums</span><span class=p>[</span><span class=n>i</span><span class=p>]};</span>
+        <span class=p>};</span>
+
+        <span class=kt>int</span> <span class=n>left</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>right</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>,</span> <span class=n>ans</span> <span class=o>=</span> <span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+        <span class=k>while</span> <span class=p>(</span><span class=n>left</span> <span class=o>&lt;=</span> <span class=n>right</span><span class=p>)</span> <span class=p>{</span>
+            <span class=kt>int</span> <span class=n>mid</span> <span class=o>=</span> <span class=p>(</span><span class=n>left</span> <span class=o>+</span> <span class=n>right</span><span class=p>)</span> <span class=o>/</span> <span class=mi>2</span><span class=p>;</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>get</span><span class=p>(</span><span class=n>mid</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>&lt;</span> <span class=n>get</span><span class=p>(</span><span class=n>mid</span><span class=p>)</span> <span class=o>&amp;&amp;</span> <span class=n>get</span><span class=p>(</span><span class=n>mid</span><span class=p>)</span> <span class=o>&gt;</span> <span class=n>get</span><span class=p>(</span><span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>))</span> <span class=p>{</span>
+                <span class=n>ans</span> <span class=o>=</span> <span class=n>mid</span><span class=p>;</span>
+                <span class=k>break</span><span class=p>;</span>
+            <span class=p>}</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>get</span><span class=p>(</span><span class=n>mid</span><span class=p>)</span> <span class=o>&lt;</span> <span class=n>get</span><span class=p>(</span><span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>))</span> <span class=p>{</span>
+                <span class=n>left</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                <span class=n>right</span> <span class=o>=</span> <span class=n>mid</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+            <span class=p>}</span>
         <span class=p>}</span>
-        <span class=n>ListNode</span><span class=o>*</span> <span class=n>newHead</span> <span class=o>=</span> <span class=n>reverseList</span><span class=p>(</span><span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>);</span>
-        <span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
-        <span class=n>head</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=k>nullptr</span><span class=p>;</span>
-        <span class=k>return</span> <span class=n>newHead</span><span class=p>;</span>
+        <span class=k>return</span> <span class=n>ans</span><span class=p>;</span>
     <span class=p>}</span>
 <span class=p>};</span>
 </code></pre></div>
@@ -161,12 +169,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <ol>
 <li><a href=#题目>题目</a></li>
 <li><a href=#思路>思路</a></li>
-<li><a href=#代码>代码</a>
-<ol>
-<li><a href=#迭代>迭代</a></li>
-<li><a href=#递归>递归</a></li>
-</ol>
-</li>
+<li><a href=#代码>代码</a></li>
 </ol>
 </nav>
 </div>
