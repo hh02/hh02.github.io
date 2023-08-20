@@ -35,14 +35,14 @@ kthLargest.add(4);   // return 8
 
 本来的思路想用插入排序做的，这样的复杂度比较高。
 
-另一种做法是用优先队列，优先队列中只保留k个元素，因为优先队列是大根堆，所以第k大的值就是堆顶，每次add的时间复杂度只有 O(logn)。
+另一种做法是用优先队列，优先队列中只保留k个元素，因为优先队列是大根堆，所以要先将其转为小根堆，只有k个元素小根堆的堆顶就是第k大的值，每次add的时间复杂度只有 O(logn)。
 
 ## 代码
 
 ```cpp
 class KthLargest {
 public:
-    priority_queue<int> q;
+    priority_queue<int, vector<int>, greater<int>> q;
     int k;
     KthLargest(int k, vector<int>& nums) {
         this->k = k;
@@ -60,10 +60,4 @@ public:
 
     }
 };
-
-/**
- * Your KthLargest object will be instantiated and called as such:
- * KthLargest* obj = new KthLargest(k, nums);
- * int param_1 = obj->add(val);
- */
- ```
+```

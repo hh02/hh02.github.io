@@ -39,7 +39,7 @@ params:
 
     sidebar:
         # emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: 落霞与孤鹜齐飞，秋水共长天一色。
         avatar:
             enabled: true
             local: true
