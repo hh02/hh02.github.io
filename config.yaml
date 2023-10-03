@@ -1,5 +1,5 @@
 baseurl: https://hh02.github.io/
-languageCode: zh-cn #en-us
+languageCode: en-us # zh-cn
 theme: hugo-theme-stack
 paginate: 5
 title: Day Day Up
@@ -39,7 +39,7 @@ params:
 
     sidebar:
         # emoji: 🍥
-        subtitle: 落霞与孤鹜齐飞，秋水共长天一色。
+        subtitle: A little everyday. # 落霞与孤鹜齐飞，秋水共长天一色。
         avatar:
             enabled: true
             local: true
