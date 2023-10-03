@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Day Day Up</title><link>https://hh02.github.io/</link><description>Recent content on Day Day Up</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 20 Aug 2023 17:22:21 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>[Learning DDD] 01 Analyzing Business Domains</title><link>https://hh02.github.io/p/learning-ddd-01-analyzing-business-domains/</link><pubDate>Sun, 20 Aug 2023 17:22:21 +0800</pubDate><guid>https://hh02.github.io/p/learning-ddd-01-analyzing-business-domains/</guid><description>&lt;h1 id="what-is-a-business-domain">What Is a Business Domain?&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Day Day Up</title><link>https://hh02.github.io/</link><description>Recent content on Day Day Up</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 20 Aug 2023 22:17:15 +0800</lastBuildDate><atom:link href="https://hh02.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>[Learning DDD] 02 Discovering Domain Knowledge</title><link>https://hh02.github.io/p/learning-ddd-02-discovering-domain-knowledge/</link><pubDate>Sun, 20 Aug 2023 22:17:15 +0800</pubDate><guid>https://hh02.github.io/p/learning-ddd-02-discovering-domain-knowledge/</guid><description>&lt;p>Chapter 01: business subdomains&amp;rsquo; boundaries and types.&lt;/p>
+&lt;p>This chapter continues the topic of business domain analysis but in a different dimension: depth. It focuses on what happens inside a subdomain: its business function and logic.&lt;/p>
+&lt;h1 id="business-problems">Business Problems&lt;/h1>
+&lt;p>Business problems appear both at the business domain and subdomain levels.&lt;/p>
+&lt;h1 id="knowledge-discovery">Knowledge Discovery&lt;/h1>
+&lt;p>To be effective, the software has to mimic the domain experts&amp;rsquo; way of thinking about the problem—their mental models.&lt;/p>
+&lt;h1 id="communication">Communication&lt;/h1>
+&lt;p>During the traditional software development lifecycle, the domain knowledge is &amp;ldquo;translated&amp;rdquo; into an engineer-friendly form known as an &lt;em>analysis model&lt;/em>, which is a description of the system&amp;rsquo;s requirements rather than an understanding of the business domain behind it. While the intentions may be good, such mediation is hazardous to knowledge sharing. In any translation, information is lost;&lt;/p>
+&lt;p>信息随着传递环节的增多，会变得不可信。&lt;/p>
+&lt;p>减少信息的翻译，让 PM, RD 等所有参与者使用同一套语言。&lt;/p>
+&lt;h1 id="what-is-a-ubiquitous-language">What Is a Ubiquitous Language&lt;/h1>
+&lt;p>Using a ubiquitous language is the cornerstone practice of domain-driven design. The idea is simple and straightforward: if parties need to communicate efficiently, instead of relying on translations, they have to speak the same language. （书同文）&lt;/p>
+&lt;p>The traditional software development lifecycle implies the following translations:&lt;/p>
+&lt;ul>
+&lt;li>Domain knowledge into an analysis model&lt;/li>
+&lt;li>Analysis model into requirements&lt;/li>
+&lt;li>Requirements into system design&lt;/li>
+&lt;li>System design into source code&lt;/li>
+&lt;/ul>
+&lt;p>Instead of continuously translating domain knowledge, domain-driven design calls for cultivating a single language for describe the business domain: the ubiquitous language.&lt;/p>
+&lt;p>All project-related stakeholders—software engineers, product owners, domain experts, UI/UX designers—should use the ubiquitous language when describing the business domain.&lt;/p>
+&lt;h1 id="language-of-the-business">Language of the Business&lt;/h1>
+&lt;p>The ubiquitous language is the language of the business. As such, it should consist of business domain—related terms only. No technical jargon!&lt;/p>
+&lt;h2 id="consistency">Consistency&lt;/h2>
+&lt;p>The ubiquitous language must be precise and consistent. It should eliminate the need for assumptions and should make the business domain&amp;rsquo;s logic explicit.&lt;/p>
+&lt;h3 id="ambiguous-terms">Ambiguous terms&lt;/h3>
+&lt;p>The term &lt;em>policy&lt;/em> has multiple meanings: it can mean a regulatory rule or an insurance contract. The exact meaning can be worked out in human-to-human interaction, depending on the context. Software, however doesn&amp;rsquo;t cope well with ambiguity, and it can be cumbersome and challenging to model the &amp;ldquo;policy&amp;rdquo; entity in code.&lt;/p>
+&lt;p>Ubiquitous language demands a single meaning for each term, so &amp;ldquo;policy&amp;rdquo; should be modeled explicitly using the two terms &lt;em>regulatory rule&lt;/em> and &lt;em>insurance contract&lt;/em>.&lt;/p>
+&lt;h3 id="synonymous-terms">Synonymous terms&lt;/h3>
+&lt;p>It is preferable to use each term explicitly in its specific context. Understanding the differences between the terms in use allows for building simpler and clearer models and implementations of the business domain&amp;rsquo;s entities.&lt;/p>
+&lt;h1 id="model-of-the-business-domain">Model of the business Domain&lt;/h1>
+&lt;h2 id="what-is-a-model">What Is a Model?&lt;/h2>
+&lt;blockquote>
+&lt;p>A model is a simplified representation of a thing or phenomenon that intentionally emphasizes certain aspects while ignoring others. Abstraction with a specific use in mind. —Rebecca Wirfs-Brock&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="effective-modeling">Effective Modeling&lt;/h2>
+&lt;p>A useful is not a copy of the real world, instead a model is intended to solve a problem, and it should provide just enough information for that purpose.&lt;/p>
+&lt;blockquote>
+&lt;p>All models are wrong, but some are useful.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="continuous-effort">Continuous Effort&lt;/h2>
+&lt;p>Cultivation of a ubiquitous language is an ongoing process. It should be constantly validated and evolved.&lt;/p>
+&lt;h2 id="tools">Tools&lt;/h2>
+&lt;p>A wiki can be used as a &lt;em>glossary&lt;/em> to capture and document the ubiquitous language. It&amp;rsquo;s important to make glossary maintenance a shared effort (not centralized).&lt;/p>
+&lt;p>Glossaries work best for &amp;ldquo;nouns&amp;rdquo;: names of entities, processes, roles, and so on. Behavior is also important. The behavior is not a mere list of verbs associated with nouns, but the actual business logic, with its rules, assumptions, and invariants. Such concepts are much harder to document in a glossary.&lt;/p>
+&lt;p>Hence, glossaries are best used in tandem with other tools that are better suited to capture the behavior; for example, use cases or Gherkin tests.&lt;/p>
+&lt;p>Automated tests written in the Gherkin language are not only great tools for capturing the ubiquitous language but also act as an additional tool for bridging the gap between domain experts and software engineers.&lt;/p>
+&lt;p>Finally, there are even static code analysis tools that can verify the usage of a ubiquitous language&amp;rsquo;s terms. A notable example for such a tool is NDepend.&lt;/p>
+&lt;h2 id="challenges">Challenges&lt;/h2>
+&lt;p>Finally, the question about the ubiquitous language that I an asked often at conferences is what language should we use if the company is not an English-speaking country. My advice is to at least use English nouns for naming the business domain&amp;rsquo;s entities. This will alleviate using the same terminology in code.&lt;/p></description></item><item><title>[Learning DDD] 01 Analyzing Business Domains</title><link>https://hh02.github.io/p/learning-ddd-01-analyzing-business-domains/</link><pubDate>Sun, 20 Aug 2023 17:22:21 +0800</pubDate><guid>https://hh02.github.io/p/learning-ddd-01-analyzing-business-domains/</guid><description>&lt;h1 id="what-is-a-business-domain">What Is a Business Domain?&lt;/h1>
 &lt;p>A business domain defines a company&amp;rsquo;s main area of activity. Generally speaking, it&amp;rsquo;s the service the company provides to its clients.&lt;/p>
 &lt;p>For example:&lt;/p>
 &lt;ul>
